@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Citas extends Model
 {
     use HasFactory;
-    protected $table = 'Citas';
+    protected $table = 'citas';
     protected $fillable = [
         'tipo_documento',
         'numero_documento',

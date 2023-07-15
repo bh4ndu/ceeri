@@ -21,10 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-route::post('/Citas/registrar', [CitasController::class, 'registrar']);
-route::get('/Citas/listar', [CitasController::class, 'listado']);
-route::put('/Citas/actualizar/{id}', [CitasController::class, 'actualizar']);
-route::get('/Citas/eliminar/{id}', [CitasController::class, 'eliminar']);
+route::POST('/Citas/registrar', [CitasController::class, 'registrar']) ->name('cita.registro');
+route::GET('/Citas/listar', [CitasController::class, 'listado']) ->name('cita.agenda');
+route::PUT('/Citas/actualizar/{id}', [CitasController::class, 'actualizar']);
+route::GET('/Citas/eliminar/{id}', [CitasController::class, 'eliminar']);
+
 
 Route::get('index', function(){
     return view('index');

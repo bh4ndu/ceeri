@@ -1,0 +1,472 @@
+.logo {
+  width: 150px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.h3,
+h3 {
+  font-size: 0.75rem;
+}
+
+.company-name {
+  margin-top: 20px;
+}
+
+.reservation-btn {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.whatsapp-icon {
+  font-size: 30px;
+  margin-top: 25px;
+  margin-left: 100px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.btn-primary {
+  background-color: rgb(24, 184, 24);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  margin-right: 100px;
+}
+
+.banner .slide {
+  position: relative;
+}
+
+.banner .slide img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.banner .slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.banner .slide-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.banner .slide-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.banner .slide-content .reserva-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+
+/* Estilos adicionales para el texto del banner */
+.banner-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-description {
+  font-size: 18px;
+  font-weight: bold;
+}
+.mi-boton {
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 13px;
+  font-weight: bold;
+}
+
+/* Contenido */
+
+.contenido1 {
+  margin-top: 30px;
+  font-size: 23px;
+
+}
+.descripcion1 {
+  text-align: center;
+  font-size: 21px;
+  margin-top: 50px;
+}
+.imagen1 {
+  width: 100%;
+  margin-top: 50px;
+}
+.contenido2 {
+  margin-top: 30px;
+  font-size: 23px;
+}
+.descripcion2 {
+  font-size: 21px;
+  text-align: center;
+  color: #007bff;
+}
+.imagen-con-borde {
+  border: 8px solid lime;
+  border-radius: 150px;
+}  
+.titulo2 {
+  font-size: 21px;
+  margin-top: 50px;
+  text-align: center;
+}
+.titulo3 {
+  font-size: 21px;
+  margin-top: 100px;
+  text-align: center;
+}
+.descripcion3 {
+  font-size: 21px;
+  text-align: center;
+  color: #007bff;
+}
+.imagen-con-borde1 {
+  border: 8px solid skyblue;
+  border-radius: 150px;
+  margin-top: 50px;
+}
+.carrusel {
+  margin-top: 100px;
+  font-size: 23px;
+}
+
+/* Estilos personalizados para las flechas */
+.slick-prev,
+.slick-next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 40px;
+height: 40px;
+background-color: transparent;
+border: none;
+font-size: 24px;
+color: #000;
+cursor: pointer;
+}
+
+.slick-prev:before,
+.slick-next:before {
+content: "";
+}
+
+.slick-prev {
+left: 20px;
+}
+
+.slick-next {
+right: 20px;
+}
+/* Estilos adicionales para el slider */
+.slider {
+  position: relative;
+  margin-top: 50px;
+  height: 320px;
+  text-align: center; /* Centra horizontalmente el contenido del carrusel */
+}
+
+.slide {
+  position: relative;
+}
+
+.slide img {
+  display: block;
+  width: 70%;
+  height: 300px;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: calc(50% - 20px); /* Ajusta la posición vertical de las flechas */
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 0; /* Ajusta la posición de la flecha izquierda */
+  margin-left: 20px; /* Añade un margen a la izquierda de la flecha */
+}
+
+.slick-next {
+  right: 0; /* Ajusta la posición de la flecha derecha */
+  margin-right: 20px; /* Añade un margen a la derecha de la flecha */
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .logo {
+    width: 120px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .h3,
+  h3 {
+    font-size: 14px;
+  }
+
+  .company-name {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .reservation-btn {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .whatsapp-icon {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .navbar-nav .nav-link {
+    margin-right: 10px;
+  }
+
+  .banner .slide-content h2 {
+    font-size: 18px;
+  }
+
+  .banner .slide-content p {
+    font-size: 14px;
+  }
+
+  .banner .slide-content .reserva-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .contenido1,
+  .contenido2,
+  .banner-title,
+  .banner-description,
+  .titulo2,
+  .titulo3,
+  .descripcion1,
+  .descripcion2,
+  .descripcion3,
+  .carrusel {
+    font-size: 18px;
+  }
+
+  .imagen1,
+  .imagen-con-borde,
+  .imagen-con-borde1 {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+/* Estilos para pantallas de escritorio */
+@media (min-width: 768px) {
+  .logo {
+    width: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .h3,
+  h3 {
+    font-size: 12px;
+  }
+
+  .company-name {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .reservation-btn {
+    margin-top: 20px;
+  }
+
+  .whatsapp-icon {
+    font-size: 30px;
+    margin-top: 25px;
+    margin-left: 100px;
+  }
+
+  .navbar-nav .nav-link {
+    margin-right: 100px;
+  }
+
+  .banner .slide-content h2 {
+    font-size: 24px;
+  }
+
+  .banner .slide-content p {
+    font-size: 16px;
+  }
+
+  .banner .slide-content .reserva-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .contenido1,
+  .contenido2,
+  .banner-title,
+  .banner-description,
+  .titulo2,
+  .titulo3,
+  .descripcion1,
+  .descripcion2,
+  .descripcion3,
+  .carrusel {
+    font-size: 23px;
+  }
+
+  .imagen1,
+  .imagen-con-borde,
+  .imagen-con-borde1 {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+/* Agregar sombreado al pasar el cursor sobre las opciones del menú */
+.navbar-nav .nav-link:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos Responsivos */
+@media (max-width: 767px) {
+  .logo {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+
+  .company-name {
+      font-size: 8px;
+      margin-top: 10px;
+      margin-left: 10px;
+      text-align: center;
+  }
+
+  .reservation-btn {
+      margin-top: 14px;
+      text-align: center;
+  }
+
+  .whatsapp-icon {
+      text-align: center;
+      margin-top: 20px;
+      margin-left: -5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .row.align-items-start {
+      align-items: flex-start;
+      justify-content: center;
+  }
+}
+
+/* footer */
+footer {
+  margin-top: 100px;
+}
+
+.img {
+  width: 100%;
+  position: relative;
+  top: -150px;
+}
+
+h4 {
+  margin-left: 100px;
+}
+
+button {
+  margin-left: 200px;
+  
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.informacion {
+  margin-left: 50px;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff; /* Cambia el color de fondo según tus necesidades */
+  z-index: 1000;
+}
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  footer {
+    margin-top: 50px;
+  }
+
+  .img {
+    top: 0;
+  }
+
+  h4 {
+    margin-left: 10px;
+    text-align: center;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .informacion {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

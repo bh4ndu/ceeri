@@ -1,6 +1,8 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CitasController;
+use App\Models\Citas;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
+});
+
+Route::get('/reserva', function () {
+    return view('reserva');
+});
+
+Route::get('/agenda', [CitasController::class, 'listado']);
+
+Route::get('/gracias', function () {
+    return view('gracias');
 });

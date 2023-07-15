@@ -1,0 +1,16 @@
+body {
+    background-color: skyblue;
+}
+
+.gracias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: rgb(49, 49, 227);
+    color: white;
+    border: none;
+    
+}
