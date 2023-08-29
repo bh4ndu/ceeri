@@ -2,9 +2,6 @@
 <head>
     <title>CEERI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <link rel="stylesheet" href="agenda.css">
 </head>
 <body>
@@ -42,16 +39,42 @@
                         <h3>especialidad: {{$cita->especialidad}}</h3>
                         <h3>genero: {{$cita->genero}}</h3>
                         <h3>fecha y hora: {{$cita->fecha_hora}}</h3>
-                        <select name="estado[]" id="">
-                            <option value="">cumplido</option>
-                            <option value="">ausente</option>
-                            <option value="">cancelada</option>
-                        </select>
-                        <br>   
+                       
+                        <form id="citaForm">
+                            <select name="estado[]" class="estadoSelect">
+                                <option value="cumplido">cumplido</option>
+                                <option value="ausente">ausente</option>
+                                <option value="cancelada">cancelada</option>
+                            </select>
+                        </form>
+                        <div class="reservation-btn">
+                            <button class="btn btn-primary"><a class="reserva-btn">enviar al historial</a></button>                                      
+                        </div>
+                        <br>
                     </div>
-                @endforeach
+                @endforeach 
             </div>         
         </section>
-    
+<script>
+    // Obtener todos los elementos select con la clase "estadoSelect"
+    const estadoSelects = document.querySelectorAll('.estadoSelect');
+
+    // Iterar sobre todos los selectores y aplicar el script a cada uno
+    estadoSelects.forEach((estadoSelect, index) => {
+        // Generar una clave única para cada selector basada en su índice
+        const storageKey = `selectedValue_${index}`;
+
+        const storedValue = localStorage.getItem(storageKey);
+
+        if (storedValue) {
+            estadoSelect.value = storedValue;
+        }
+
+        estadoSelect.addEventListener('change', function() {
+            const selectedValue = estadoSelect.value;
+            localStorage.setItem(storageKey, selectedValue);
+        });
+    });
+</script>
 </body>
 </html>

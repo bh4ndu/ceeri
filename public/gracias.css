@@ -1,16 +1,26 @@
 body {
     background-color: skyblue;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .gracias {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    margin-top: 300px;
+    font-size: 30px;
+
 }
 
-button {
+ .gracias button {
     background-color: rgb(49, 49, 227);
-    color: white;
     border: none;
-    
+    height: 50px;
+}
+
+.gracias button a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
 }

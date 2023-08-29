@@ -28,3 +28,7 @@ Route::get('/agenda', [CitasController::class, 'listado']);
 Route::get('/gracias', function () {
     return view('gracias');
 });
+
+Route::get('/historial', function () {
+    return view('historial');
+});
