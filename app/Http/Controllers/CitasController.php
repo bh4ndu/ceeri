@@ -30,5 +30,8 @@ class CitasController extends Controller
         $cita = Citas::find($id);
         $cita->delete();
         return 1;
-    } 
+    }
+
+   
+
 }

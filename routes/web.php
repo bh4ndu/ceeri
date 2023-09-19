@@ -2,7 +2,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CitasController;
+use App\Http\Controllers\HistorialController;
 use App\Models\Citas;
+use App\Models\historial;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,4 @@ Route::get('/gracias', function () {
     return view('gracias');
 });
 
-Route::get('/historial', function () {
-    return view('historial');
-});
+Route::get('/historial', [HistorialController::class, 'listado']);

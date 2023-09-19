@@ -1,11 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>CEERI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    <link rel="stylesheet" href="agenda.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="historial.css">
 </head>
 <body>
     <!-- LOGO -->
@@ -29,5 +31,76 @@
        </div>
     </div>
     <br>
+
+    <div class="container">
+        @php
+        $citasPorDocumento = [];
+        @endphp
+    
+        @foreach ($citas as $cita)
+            @php
+            $numero_documento = $cita->numero_documento;
+            @endphp
+    
+            @if (!array_key_exists($numero_documento, $citasPorDocumento))
+                @php
+                $citasPorDocumento[$numero_documento] = [];
+                @endphp
+            @endif
+    
+            @php
+            $citasPorDocumento[$numero_documento][] = $cita;
+            @endphp
+        @endforeach
+    
+        @foreach ($citasPorDocumento as $numero_documento => $citasDocumento)
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{ $numero_documento }}">
+            {{$citasDocumento[0]->nombres}} {{$citasDocumento[0]->apellidos}} (DNI: {{ $numero_documento }})
+        </button>
+        
+    
+            <div class="modal fade" id="modal-{{ $numero_documento }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel-{{ $numero_documento }}" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel-{{ $numero_documento }}">Citas para DNI {{ $numero_documento }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <section class="container">
+                                <div class="row">
+                                    @foreach ($citasDocumento as $cita)
+                                        <div class="col-md-8 cita">
+                                            <div class="card col-md-7">
+                                                <div class="card-body col-md-9">
+                                                    <!-- Aquí muestras los detalles de cada cita -->
+                                                    <h3 class="card-title">Tipo de documento: {{ $cita->tipo_documento }}</h3>
+                                                    <p class="card-text">Número de documento: {{$cita->numero_documento}}</p>
+                                                    <p class="card-text">Nombres: {{$cita->nombres}}</p>
+                                                    <p class="card-text">Apellidos: {{$cita->apellidos}}</p>
+                                                    <p class="card-text">Teléfono: {{$cita->telefono}}</p>
+                                                    <p class="card-text">Especialidad: {{$cita->especialidad}}</p>
+                                                    <p class="card-text">Género: {{$cita->genero}}</p>
+                                                    <p class="card-text">Fecha y hora: {{$cita->fecha_hora}}</p>
+                                                    <p class="card-text">estado: {{$cita->estado}}</p> 
+                                                    <!-- ... otros campos de la cita ... -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    
+    
+                                                    
+                                                    
 </body>
 </html>
