@@ -52,9 +52,9 @@
             $citasPorDocumento[$numero_documento][] = $cita;
             @endphp
         @endforeach
-    
+
         @foreach ($citasPorDocumento as $numero_documento => $citasDocumento)
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{ $numero_documento }}">
+        <button type="button" class="btn btn-primary history" data-toggle="modal" data-target="#modal-{{ $numero_documento }}">
             {{$citasDocumento[0]->nombres}} {{$citasDocumento[0]->apellidos}} (DNI: {{ $numero_documento }})
         </button>
         
@@ -62,18 +62,15 @@
             <div class="modal fade" id="modal-{{ $numero_documento }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel-{{ $numero_documento }}" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalLabel-{{ $numero_documento }}">Citas para DNI {{ $numero_documento }}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                                <span aria-hidden="true">&times;</span>
+                        <div class="modal-header ">
+                            <h5 class="modal-title" id="modalLabel-{{ $numero_documento }}">Historial de: {{ $citasDocumento[0]->nombres }} {{ $citasDocumento[0]->apellidos }}</h5>
+                            <button class="elemento" type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                             </button>
-                        </div>
-                        <div class="modal-body">
                             <section class="container">
                                 <div class="row">
                                     @foreach ($citasDocumento as $cita)
                                         <div class="col-md-8 cita">
-                                            <div class="card col-md-7">
+                                            <div class="card col-md-9">
                                                 <div class="card-body col-md-9">
                                                     <!-- Aquí muestras los detalles de cada cita -->
                                                     <h3 class="card-title">Tipo de documento: {{ $cita->tipo_documento }}</h3>

@@ -36,8 +36,8 @@ body {
 
 .card {
   display: inline-block;
-  /* Opcional: Agrega márgenes, relleno u otros estilos según sea necesario */
-  margin-right: 10px; /* Espacio entre objetos en línea */
-  margin-top: 80px; /* Espacio debajo de los objetos */
+  margin-right: 10px;
+  margin-top: 80px; 
 }
+
 

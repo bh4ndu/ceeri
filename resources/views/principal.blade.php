@@ -51,6 +51,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/reserva" >Reserva</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/agenda" >agenda</a>
+                    </li>
                 </ul>
             </div>
         </nav>
