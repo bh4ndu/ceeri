@@ -18,19 +18,28 @@
                 <div class="col-2">
                     <img class="logo img-fluid" src="img/post/1.jpg" alt="Logo">
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <h3 class="company-name">CENTRO ESPECIALIZADO<br>EN REHABILITACIÓN INTEGRAL</h3>
                 </div>
                 <div class="col-2">
                     <button class="btn btn-light"><a href="/agenda" class="reserva-btn text-primary">Citas Agendadas</a></button>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <button class="btn btn-light"><a href="/historial" class="reserva-btn text-primary">Historial de Citas</a></button>
+                </div>
+                <div class="col-4">
+                    <!-- Agrega la barra de búsqueda aquí -->
+                    <form action="/agenda" method="GET">
+                        <input  class="barra"type="text" name="texto" placeholder="Buscar...">
+                        <button  class="barra-button"type="submit">Buscar</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <br>
+    
+
 
     <!-- Sección de citas -->
     <section class="container">
@@ -58,7 +67,7 @@
                                 <p class="card-text">Especialidad: {{$cita->especialidad}}</p>
                                 <p class="card-text">Género: {{$cita->genero}}</p>
                                 <p class="card-text">Fecha y hora: {{$cita->fecha_hora}}</p>
-                                <select name="estado" id="estadoSelect">
+                                <select name="estado" id="estadoSelect{{$loop->index}}" >
                                     <option value="cumplido">cumplido</option>
                                     <option value="ausente">ausente</option>
                                     <option value="cancelada">cancelada</option>
@@ -77,31 +86,42 @@
     <!-- Scripts -->
     
 <script>
-    // Función para guardar el valor seleccionado en localStorage
-    function saveSelectedValue(index) {
-        const selectElement = document.getElementById(`estadoSelect${index}`);
+ // Función para guardar el valor seleccionado en localStorage
+function saveSelectedValue(index) {
+    const selectElement = document.getElementById(`estadoSelect${index}`);
+    if (selectElement) {
         const selectedValue = selectElement.value;
         localStorage.setItem(`selectedValue${index}`, selectedValue);
     }
+}
 
-    // Función para restaurar el valor seleccionado desde localStorage
-    function restoreSelectedValue(index) {
-        const selectElement = document.getElementById(`estadoSelect${index}`);
+// Función para restaurar el valor seleccionado desde localStorage
+function restoreSelectedValue(index) {
+    const selectElement = document.getElementById(`estadoSelect${index}`);
+    if (selectElement) {
         const storedValue = localStorage.getItem(`selectedValue${index}`);
         if (storedValue !== null) {
             selectElement.value = storedValue;
         }
     }
+}
 
-    // Asigna un evento "change" a cada select para guardar su valor seleccionado
-    document.addEventListener("DOMContentLoaded", function () {
-        @foreach ($citas as $index => $cita)
-            restoreSelectedValue({{$loop->index}});
-            document.getElementById(`estadoSelect{{$loop->index}}`).addEventListener("change", function () {
-                saveSelectedValue({{$loop->index}});
-            });
-        @endforeach
-    });
+// Asigna un evento "change" a cada select para guardar su valor seleccionado
+document.addEventListener("DOMContentLoaded", function () {
+    @foreach ($citas as $index => $cita)
+        (function () {
+            const selectElement = document.getElementById(`estadoSelect{{$loop->index}}`);
+            if (selectElement) {
+                restoreSelectedValue({{$loop->index}});
+                selectElement.addEventListener("change", function () {
+                    saveSelectedValue({{$loop->index}});
+                });
+            }
+        })();
+    @endforeach
+});
+
+
 </script>
 
     

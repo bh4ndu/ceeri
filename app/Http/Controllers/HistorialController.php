@@ -14,27 +14,22 @@ class HistorialController extends Controller
         return view('historial', compact('citas')); 
     }
 
-    public function guardarHistorial(Request $request)
-{
+    public function guardarHistorial(Request $request) {
 
-    $data = $request->all();
-    Historial::create([
-        'cita_id' => $data['cita_id'],
-        'tipo_documento' => $data['tipo_documento'],
-        'numero_documento' => $data['numero_documento'],
-        'nombres' => $data['nombres'],
-        'apellidos' => $data['apellidos'],
-        'telefono' => $data['telefono'],
-        'especialidad' => $data['especialidad'],
-        'genero' => $data['genero'],
-        'fecha_hora' => $data['fecha_hora'],
-        'estado' => $data['estado'],
-        // Agrega otros campos de acuerdo a tu tabla
-    ]);
-
-    
-
-    // Puedes redirigir al usuario a donde desees después de guardar el historial
-}
+        $data = $request->all();
+        Historial::create([
+            'cita_id' => $data['cita_id'],
+            'tipo_documento' => $data['tipo_documento'],
+            'numero_documento' => $data['numero_documento'],
+            'nombres' => $data['nombres'],
+            'apellidos' => $data['apellidos'],
+            'telefono' => $data['telefono'],
+            'especialidad' => $data['especialidad'],
+            'genero' => $data['genero'],
+            'fecha_hora' => $data['fecha_hora'],
+            'estado' => $data['estado'],  
+        ]);
+        
+    }
 
 }

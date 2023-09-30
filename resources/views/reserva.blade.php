@@ -64,7 +64,13 @@
         </div>
         <div class="form-group">
           <label for="especialidad">Especialidad</label>
-          <input type="text" class="form-control" id="especialidad" name="especialidad" required>
+          <select name="especialidad" class="form-control" id="especialidad" required >
+            <option value="terapia fisica y rehabilitacion">terapia fisica y rehabilitacion</option>
+            <option value="Terapia de lenguaje">Terapia de lenguaje</option>
+            <option value="Terapia Ocupacional">Terapia Ocupacional</option>
+            <option value="Terapia infantil">Terapia infantil</option>
+            <option value="Psicología">Psicología</option>
+          </select>  
         </div>
         <div class="form-group">
           <label for="genero">Género</label>

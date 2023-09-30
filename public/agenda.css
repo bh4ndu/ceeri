@@ -40,4 +40,17 @@ body {
   margin-top: 80px; 
 }
 
+.barra {
+  border-style: solid;
+  border: 10px;
+  border-radius: 5px;
+  height: 35px;
+}
 
+.barra-button {
+  border-style: solid;
+  border: 10px;
+  border-radius: 5px;
+  height: 35px;
+  color: rgb(72, 72, 222);
+}

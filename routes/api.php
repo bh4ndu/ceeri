@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CitasController;
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\BusquedaController;
+
 use App\Models\Citas;
 use App\Models\historial;
 
@@ -35,3 +37,5 @@ Route::get('index', function(){
 });
 
 Route::post('/agenda', [HistorialController::class,'guardarHistorial'])->name('guardar.historial'); 
+
+
